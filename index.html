@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jão - Biografia e Álbuns</title>
+    <style>
+        /* CSS */
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #2e2b2b, #3a3136);
+            color: #e0d6d1;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Georgia', serif;
+            color: #e8b4bc;
+        }
+
+        .header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1.5rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            margin-top: 1rem;
+        }
+
+        nav a {
+            color: #e8b4bc;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #e8b4bc;
+            color: #2e2b2b;
+            transform: scale(1.1);
+        }
+
+        .section {
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #e8b4bc;
+            margin: 0.5rem auto;
+        }
+
+        img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            margin-top: 1rem;
+            transition: transform 0.5s, box-shadow 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .album {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .album .info {
+            text-align: left;
+            max-width: 500px;
+            margin-top: 1rem;
+            color: #e0d6d1;
+        }
+
+        .album img {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        button {
+            background: #e8b4bc;
+            color: #2e2b2b;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c2969f;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            color: #e0d6d1;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header fade-in">
+        <h1>Jão</h1>
+        <nav>
+            <a href="#biografia">Biografia</a>
+            <a href="#albuns">Álbuns</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="biografia" class="section fade-in">
+            <h2>Biografia</h2>
+            <p>Jão, nome artístico de João Vitor Romania Balbino, é um cantor e compositor brasileiro que mistura pop e MPB. Suas letras profundas e melancólicas emocionam milhares de fãs.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/J%C3%A3o_2019.jpg" alt="Foto do Jão">
+        </section>
+
+        <section id="albuns" class="section fade-in">
+            <h2>Álbuns</h2>
+            <div class="album">
+                <img src="https://upload.wikimedia.org/wikipedia/pt/1/17/J%C3%A3o_Lobos.jpg" alt="Álbum Lobos">
+                <div class="info">
+                    <h3>Lobos (2018)</h3>
+                    <p>Com hits como "Imaturo", Jão introduziu seu estilo único ao público.</p>
+                    <button onclick="showDetails('Lobos')">Saiba mais</button>
+                </div>
+            </div>
+
+            <div class="album">
+                <img src="https://upload.wikimedia.org/wikipedia/pt/7/71/J%C3%A3o_Antes_da_Gente_Acabar.jpg" alt="Álbum Anti-Herói">
+                <div class="info">
+                    <h3>Anti-Herói (2019)</h3>
+                    <p>Explora temas de amor e perda com uma sonoridade mais sombria.</p>
+                    <button onclick="showDetails('Anti-Herói')">Saiba mais</button>
+                </div>
+            </div>
+
+            <div class="album">
+                <img src="https://upload.wikimedia.org/wikipedia/pt/8/84/J%C3%A3o_Pirata.jpg" alt="Álbum Pirata">
+                <div class="info">
+                    <h3>Pirata (2021)</h3>
+                    <p>Um álbum sobre liberdade e redescoberta pessoal.</p>
+                    <button onclick="showDetails('Pirata')">Saiba mais</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Site criado para fãs do Jão. ❤️</p>
+    </footer>
+
+    <script>
+        // JavaScript
+        document.addEventListener("DOMContentLoaded", () => {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach((el, index) => {
+                setTimeout(() => el.style.opacity = 1, index * 300);
+            });
+        });
+
+        function showDetails(album) {
+            alert(`Mais informações sobre o álbum ${album} em breve!`);
+        }
+    </script>
+</body>
+</html>
